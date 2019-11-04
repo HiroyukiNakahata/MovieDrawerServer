@@ -4,17 +4,17 @@ import com.zaxxer.hikari.*
 import java.sql.Connection
 
 object PgService {
-    private val config = HikariConfig()
-    private val ds: HikariDataSource
+  private val config = HikariConfig()
+  private val ds: HikariDataSource
 
-    init {
-        config.jdbcUrl = "jdbc:postgresql://localhost/postgres"
-        config.username = "postgres"
-        config.password = "1203"
-        ds = HikariDataSource(config)
-    }
+  init {
+    config.jdbcUrl = "jdbc:postgresql://localhost/movie_drawer"
+    config.username = "postgres"
+    config.password = "1203"
+    ds = HikariDataSource(config)
+  }
 
-    fun getConnection(): Connection {
-        return ds.connection
-    }
+  fun getConnection(): Connection {
+    return ds.connection
+  }
 }
